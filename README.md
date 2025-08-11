@@ -1,4 +1,5 @@
-# PING - Easily monitor a website or endpoint
+# PING - Easily monitor a website or endpoint 
+## Open Source web/endpoint monitor tool with a minimalist dashboard
 ![ssp-screenshot](pinglogo.png)
 PHP Incident Notification Gateway - PING
 
