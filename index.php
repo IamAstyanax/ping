@@ -137,7 +137,7 @@ function calculateUptimePercent($successful, $total) {
     </table>
 
     <<div class="footer">
-  &copy; <?= date('Y'); ?> PING by <a href="https://github.com/IamAstyanax" target="_blank" rel="noopener noreferrer" style="color: #00ffa3; text-decoration: none;">IamAstyanax</a> &mdash;
+  &copy; <?= date('Y'); ?> PING by <a href="https://github.com/IamAstyanax/ping" target="_blank" rel="noopener noreferrer" style="color: #00ffa3; text-decoration: none;">IamAstyanax</a> &mdash;
 </div>
 </body>
 </html>
