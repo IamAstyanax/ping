@@ -1,5 +1,5 @@
 # PING - Easily monitor a website or endpoint
-
+![ssp-screenshot](pinglogo.png)
 PHP Incident Notification Gateway - PING
 
 PING is the stupid simple "Is it up?" application. PING sends emails via PHP to alert if a site is down by either ping or web status. 
