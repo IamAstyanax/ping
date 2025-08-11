@@ -19,6 +19,7 @@ function calculateUptimePercent($successful, $total) {
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="10" />
     <title>PING - The Open Source Monitoring Tool!</title>
     <style>
         /* Your existing CSS here, copied exactly */
@@ -136,7 +137,7 @@ function calculateUptimePercent($successful, $total) {
         </tbody>
     </table>
 
-    <<div class="footer">
+    <div class="footer">
   &copy; <?= date('Y'); ?> PING by <a href="https://github.com/IamAstyanax/ping" target="_blank" rel="noopener noreferrer" style="color: #00ffa3; text-decoration: none;">IamAstyanax</a> &mdash;
 </div>
 </body>
