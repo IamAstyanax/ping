@@ -8,9 +8,8 @@ use PHPMailer\PHPMailer\Exception;
 // PING
 // A stupid simple cloud native PHP application to monitor a web endpoint
 // Written by IamAstyanax - Benjamin Ritter 
-// With some help from AI (kind of) and Stack Overflow :)
-// I am not a developer. I work in DevOps, but I play PHP developer on cable TV.
-// Vaporwave is the best music genre ever made.
+// With some help from AI and Stack Overflow :)
+// I am not a developer, but I play PHP developer on TV
 // 
 // -------------------
 $sitesJson = getenv('SITES_JSON');
@@ -29,8 +28,8 @@ $maxAttempts   = (int) getenv('MAX_ATTEMPTS') ?: 5;
 $cycleDelay    = (int) getenv('CYCLE_DELAY') ?: 60;
 
 // O365 Email Config
-$o365User   = getenv('EMAIL_USER');
-$o365Pass   = getenv('EMAIL_PASS');
+$email_user   = getenv('EMAIL_USER');
+$email_pass  = getenv('EMAIL_PASS');
 $alertEmail = getenv('ALERT_EMAIL');
 
 $statusFile = '/app/status.json';
@@ -178,7 +177,7 @@ while (true) {
         if ($failCount === $maxAttempts) {
             $subject = "ALERT: $target is DOWN";
             $body    = "The host $target failed all $maxAttempts monitoring attempts using method [$monitorType] within this cycle at {$allStatusData[$target]['lastChecked']}.";
-            sendAlert($alertEmail, $subject, $body, $o365User, $o365Pass);
+            sendAlert($alertEmail, $subject, $body, $email_user, $email_pass);
         }
 
         echo "Cycle complete for $target.\n\n";
