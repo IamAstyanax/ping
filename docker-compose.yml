@@ -1,0 +1,25 @@
+services:
+  ping-prtg:
+    image: ping
+    container_name: ping
+    environment:
+      - EMAIL_USER=YOUR_EMAIL_USER
+      - EMAIL_PASS=YOUR_EMAIL_PASSWORD
+      - ALERT_EMAIL=EMAIL_TO_ALERT_OR_TEAMS
+      - CHECK_INTERVAL=SECONDS_TO_CHECK_ENDPOINT
+      - MAX_ATTEMPTS=NUMBER_OF_ATTEMPTS_BETWEEN_INTERVALS
+      - MONITOR_TYPE=PING_OR_WEB_STATUS
+      - TARGET_WEBSITE=ENDPOINT
+      - SMTP_HOST=MAIL_SERVER
+      - SMTP_AUTH=true
+      - SMTP_SECURE=tls
+      - SMTP_PORT=587
+      - COMPANY_NAME=YOUR_COMPANY_NAME
+
+    build:
+      context: .
+      dockerfile: dockerfile
+
+    restart: always
+    ports:
+      - "80:8000"
