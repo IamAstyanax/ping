@@ -15,6 +15,11 @@ services:
       - SMTP_SECURE=tls
       - SMTP_PORT=587
       - COMPANY_NAME=YOUR_COMPANY_NAME
+      - SITES_JSON=[
+                     {"target":"google.com","monitorType":"WEB"},
+                     {"target":"https://yahoo.com","monitorType":"WEB"},
+                     {"target":"https://runescape.com","monitorType":"PING"},
+                   ]
 
     build:
       context: .
