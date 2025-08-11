@@ -21,6 +21,7 @@ function calculateUptimePercent($successful, $total) {
     <meta charset="UTF-8" />
     <title>PING - The Open Source Monitoring Tool!</title>
     <style>
+        /* Your existing CSS here, copied exactly */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: #1e1e2f;
@@ -98,9 +99,7 @@ function calculateUptimePercent($successful, $total) {
                 <th>Uptime Cycles</th>
                 <th>Last Checked</th>
                 <th>Monitoring Started</th>
-                <th title="Monitoring started at the timestamp below">
-                    Uptime % (since start)
-                </th>
+                <th title="Monitoring started at the timestamp below">Uptime % (since start)</th>
             </tr>
         </thead>
         <tbody>
@@ -114,10 +113,8 @@ function calculateUptimePercent($successful, $total) {
                         $data['successfulChecks'] ?? 0, 
                         $data['totalChecks'] ?? 0
                     );
-                    // color red if uptime < 99.99%
-                    $uptimeBarClass = ($uptimePercent !== "N/A" && $uptimePercent < 99.99) ? 'uptime-low' : '';
+                    $uptimeBarClass = ($uptimePercent !== "N/A" && $uptimePercent < 90) ? 'uptime-low' : '';
 
-                    // Uptime bar width capped to 100%
                     $barWidth = ($uptimePercent === "N/A") ? 0 : min(100, $uptimePercent);
 
                     $monitoringStarted = htmlspecialchars($data['serviceStartedAt'] ?? 'Unknown');
@@ -139,8 +136,8 @@ function calculateUptimePercent($successful, $total) {
         </tbody>
     </table>
 
-    <div class="footer">
-        &copy; <?= date('Y'); ?> <?= htmlspecialchars($companyName) ?> &mdash;
-    </div>
+    <<div class="footer">
+  &copy; <?= date('Y'); ?> PING by <a href="https://github.com/IamAstyanax/ping" target="_blank" rel="noopener noreferrer" style="color: #00ffa3; text-decoration: none;">IamAstyanax</a> &mdash;
+</div>
 </body>
 </html>
