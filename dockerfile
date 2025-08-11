@@ -7,11 +7,11 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
 
-COPY monitor.php /app/monitor.php
+COPY /src/monitor.php /app/monitor.php
 
 RUN mkdir -p /app/public
 
-COPY index.php /app/public/index.php
+COPY /src/index.php /app/public/index.php
 
 RUN composer require phpmailer/phpmailer
 
