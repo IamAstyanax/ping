@@ -43,3 +43,5 @@ The container will start and run on port 80 and will forward to port 8000 to the
 ## Dashboard
 The dashboard will present a nice interface to see uptime status, status, etc. You can monitor multiple sites and decide how often to check their status.
 Every 10 seconds the dashboard will refresh.
+
+![ssp-screenshot](ping_dash.png)
