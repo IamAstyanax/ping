@@ -16,16 +16,18 @@ You must have docker and docker-compose installed.
 
 
 ## Variables in Docker-Compose
-EMAIL_USER=YOUR_EMAIL_USER
-ALERT_EMAIL=EMAIL_TO_ALERT_OR_TEAMS
-EMAIL_PASS=YOUR_EMAIL_PASSWORD
-CHECK_INTERVAL=SECONDS_TO_CHECK_ENDPOINT
-MAX_ATTEMPTS=NUMBER_OF_ATTEMPTS_BETWEEN_INTERVALS
-SMTP_HOST=MAIL_SERVER
+EMAIL_USER=YOUR_EMAIL_USER = Email account to use for SMTP
+EMAIL_PASS=YOUR_EMAIL_PASSWORD = Email password to use for SMTP
+ALERT_EMAIL=EMAIL_TO_ALERT_OR_TEAMS = Email to send alerts to
+CHECK_INTERVAL=SECONDS_TO_CHECK_ENDPOINT = How often you want to check status of sites
+MAX_ATTEMPTS=NUMBER_OF_ATTEMPTS_BETWEEN_INTERVALS = Number of attempts to make to a site before determined failure.
+SMTP_HOST=MAIL_SERVER = Your Mail Server
 SMTP_AUTH=true
 SMTP_SECURE=tls
 SMTP_PORT=587
 COMPANY_NAME=YOUR_COMPANY_NAME
+
+Set your target sites here:
 SITES_JSON=[
 {"target":"example01.com","monitorType":"WEB"},
 {"target":"example02.com","monitorType":"WEB"},
@@ -37,3 +39,7 @@ Please note `monitorType`. Setting to `WEB` will look up HTTP status. `PING` wil
 `docker compose up -d`
 
 The container will start and run on port 80 and will forward to port 8000 to the apache web server.
+
+## Dashboard
+The dashboard will present a nice interface to see uptime status, status, etc. You can monitor multiple sites and decide how often to check their status.
+Every 10 seconds the dashboard will refresh.
