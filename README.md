@@ -16,23 +16,27 @@ You must have docker and docker-compose installed.
 
 
 ## Variables in Docker-Compose
-EMAIL_USER=YOUR_EMAIL_USER = Email account to use for SMTP
-EMAIL_PASS=YOUR_EMAIL_PASSWORD = Email password to use for SMTP
-ALERT_EMAIL=EMAIL_TO_ALERT_OR_TEAMS = Email to send alerts to
-CHECK_INTERVAL=SECONDS_TO_CHECK_ENDPOINT = How often you want to check status of sites
-MAX_ATTEMPTS=NUMBER_OF_ATTEMPTS_BETWEEN_INTERVALS = Number of attempts to make to a site before determined failure.
-SMTP_HOST=MAIL_SERVER = Your Mail Server
-SMTP_AUTH=true
-SMTP_SECURE=tls
-SMTP_PORT=587
-COMPANY_NAME=YOUR_COMPANY_NAME
+| Variable         | Example Value                          | Description                                                    |
+| ---------------- | -------------------------------------- | -------------------------------------------------------------- |
+| `EMAIL_USER`     | `YOUR_EMAIL_USER`                      | Email account to use for SMTP                                  |
+| `EMAIL_PASS`     | `YOUR_EMAIL_PASSWORD`                  | Email password to use for SMTP                                 |
+| `ALERT_EMAIL`    | `EMAIL_TO_ALERT_OR_TEAMS`              | Email address to send alerts to (can be a Teams channel email) |
+| `CHECK_INTERVAL` | `SECONDS_TO_CHECK_ENDPOINT`            | How often (in seconds) to check status of sites                |
+| `MAX_ATTEMPTS`   | `NUMBER_OF_ATTEMPTS_BETWEEN_INTERVALS` | Number of attempts before determining a failure                |
+| `SMTP_HOST`      | `MAIL_SERVER`                          | SMTP mail server address                                       |
+| `SMTP_AUTH`      | `true`                                 | Enable SMTP authentication (`true` or `false`)                 |
+| `SMTP_SECURE`    | `tls`                                  | Encryption method (`tls` or `ssl`)                             |
+| `SMTP_PORT`      | `587`                                  | SMTP port number                                               |
+| `COMPANY_NAME`   | `YOUR_COMPANY_NAME`                    | Company name to display in alerts                              |
 
-Set your target sites here:
-SITES_JSON=[
-{"target":"example01.com","monitorType":"WEB"},
-{"target":"example02.com","monitorType":"WEB"},
-{"target":"example03.com","monitorType":"PING"},
-           ]
+
+## Target Site configuration
+[
+  {"target": "example01.com", "monitorType": "WEB"},
+  {"target": "example02.com", "monitorType": "WEB"},
+  {"target": "example03.com", "monitorType": "PING"}
+]
+
 
 Please note `monitorType`. Setting to `WEB` will look up HTTP status. `PING` will use ICMP.
 
