@@ -31,11 +31,11 @@ You must have docker and docker-compose installed.
 
 
 ## Target Site configuration
-[
-  {"target": "example01.com", "monitorType": "WEB"},
-  {"target": "example02.com", "monitorType": "WEB"},
-  {"target": "example03.com", "monitorType": "PING"}
-]
+
+ ` {"target": "example01.com", "monitorType": "WEB"},`
+ ` {"target": "example02.com", "monitorType": "WEB"},`
+ ` {"target": "example03.com", "monitorType": "PING"}`
+
 
 
 Please note `monitorType`. Setting to `WEB` will look up HTTP status. `PING` will use ICMP.
